@@ -78,8 +78,13 @@ WSGI_APPLICATION = 'Aplicativo.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': "Quiz",
+        'Trusted_Connection': 'yes',
+        'HOST': 'localhost\\SQLEXPRESS',
+        'OPTIONS': {
+            'driver' : 'SQL Server Native Client 11.0',
+        }
     }
 }
 
